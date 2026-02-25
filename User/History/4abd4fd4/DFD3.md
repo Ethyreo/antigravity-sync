@@ -1,0 +1,28 @@
+# Bored Games - Project Tasks
+
+- [x] Initialize Flutter Project "Bored Games" <!-- id: 0 -->
+- [x] Design and Document Architecture/Folder Structure <!-- id: 1 -->
+- [x] Configure Dependencies (Riverpod, GoRouter, SharedPrefs) <!-- id: 5 -->
+- [/] Set up Project Structure <!-- id: 5 -->
+    - [/] Create core directories (ui, logic, services) <!-- id: 6 -->
+    - [x] Create game interface/base classes <!-- id: 7 -->
+- [x] Implement Home Screen <!-- id: 8 -->
+    - [x] Upgrade Home Screen to Cyber-8-bit Style <!-- id: 18 --> (New)
+    - [x] Implement CRT Scanline Shader <!-- id: 19 --> (New)
+- [x] Implement First Mini-Game (Placeholder/Simple) <!-- id: 11 -->
+    - [x] Reskin Tic-Tac-Toe to Cyber-8-bit <!-- id: 21 --> (New)
+- [x] Animations & Polish <!-- id: 22 --> (New)
+    - [x] Implement Game Launch "Neon Line" Animation <!-- id: 23 -->
+    - [x] Implement 8-bit Particle System (Square Pixels) <!-- id: 24 --> (New)
+    - [x] Implement Haptic Feedback Service <!-- id: 25 --> (New)
+    - [x] Integrate "Juice" into Tic-Tac-Toe (Win Explosion + Haptics) <!-- id: 26 --> (New)
+- [ ] Implement Second Game: "Neon Snake" <!-- id: 27 --> (New)
+    - [ ] Create Snake Data Models (Point, Direction) <!-- id: 28 --> (New)
+    - [ ] Implement Snake Logic (Movement, Growth, Collision) <!-- id: 29 --> (New)
+    - [ ] Build UI with Cyber Aesthetics (Neon Trail) <!-- id: 30 --> (New)
+    - [ ] Integrate Haptics & Particles <!-- id: 31 --> (New)
+- [x] Implement Local Storage Service <!-- id: 12 -->
+- [x] Security Hardening & Optimization <!-- id: 13 -->
+    - [x] Audit Permissions (Android/iOS) <!-- id: 15 -->
+    - [x] Secure Local Storage (Encryption/Checksum) <!-- id: 16 -->
+    - [x] Remove/Minify Debug Comments (Handled via Obfuscation) <!-- id: 17 -->

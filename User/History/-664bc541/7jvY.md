@@ -1,0 +1,22 @@
+# Personal News Feed App Tasks
+
+- [x] Project Setup
+    - [x] Create project directory (Renamed to NewsFeedApp)
+    - [x] Create Swift project structure
+    - [x] Create Xcode project file
+- [x] Requirements & Planning
+    - [x] Define Architecture (N8N + Python + iOS)
+    - [x] Define Data Retrieval Strategy (YouTube + Scraping + Gemini)
+- [/] Core Implementation
+    - [/] **Phase 1: The Brain (Python)** - *Paused*
+        - [x] Setup `backend` environment & dependencies
+        - [x] Implement processor with caching
+        - [ ] Implement N8N callable script
+    - [/] **Phase 2: The Viewer (iOS)** - *Active*
+        - [x] Create SwiftUI Project Structure
+        - [x] Define Data Models with Sample Data
+        - [x] Build CardView (Warm, Luxurious, Minimalistic)
+        - [x] Build Tinder-style CardStackView with Gestures
+        - [ ] Add Filter Sheet with Multi-select
+        - [ ] Polish animations and haptics
+        - [ ] Test on device

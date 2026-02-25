@@ -1,0 +1,6 @@
+# Tasks
+
+- [x] Install Frontend Design Skill
+    - [x] Create directory structure `.agent/skills/frontend_design`
+    - [x] Create `SKILL.md` with design guidelines
+    - [ ] Update `SKILL.md` with content from provided GitHub URL

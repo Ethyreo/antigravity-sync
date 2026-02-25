@@ -1,0 +1,22 @@
+# Personal News Feed App Tasks
+
+- [/] Project Setup
+    - [x] Create project directory (Renamed to NewsFeedApp)
+    - [ ] Initialize git repository
+    - [ ] Create initial Xcode project structure
+- [x] Requirements & Planning
+    - [x] Define Architecture (Python Backend + iOS Frontend)
+    - [x] Define Data Retrieval Strategy (YouTube + Scraping + Gemini)
+- [/] Core Implementation
+    - [/] **Phase 1: The Brain (Python)**
+        - [ ] Setup `backend` environment & dependencies
+        - [ ] Implement YouTube Transcript Fetcher
+        - [ ] Implement Website Scraper
+        - [ ] Implement Gemini Summarizer
+        - [ ] Orchestrate Feed Generation (`feeder.py`)
+    - [ ] **Phase 2: The Viewer (iOS)**
+        - [ ] Create SwiftUI Project
+        - [ ] Define Data Models
+        - [ ] Build Tinder-like CardView
+        - [ ] Build Swipeable Stack
+        - [ ] Implement Filtering Logic

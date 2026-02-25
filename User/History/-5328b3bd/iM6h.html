@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Bored Games — Cyber-8-bit mini-game arcade.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Bored Games">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>Bored Games</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      overflow: hidden;
+    }
+
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      transition: opacity 0.5s ease-out;
+    }
+
+    #loading-screen.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Scanline overlay */
+    #loading-screen::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(transparent 0px,
+          transparent 2px,
+          rgba(0, 0, 0, 0.15) 2px,
+          rgba(0, 0, 0, 0.15) 4px);
+    }
+
+    .loading-logo {
+      font-family: 'Courier New', monospace;
+      font-size: clamp(24px, 6vw, 48px);
+      font-weight: bold;
+      color: #00FFFF;
+      letter-spacing: 6px;
+      text-shadow:
+        0 0 10px #00FFFF,
+        0 0 30px rgba(0, 255, 255, 0.4);
+      animation: glitch 2s infinite;
+      margin-bottom: 48px;
+    }
+
+    .loading-bar-container {
+      width: min(200px, 60vw);
+      height: 20px;
+      border: 2px solid #00FFFF;
+      box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loading-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #FF00FF;
+      box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+      transition: width 0.3s ease-out;
+    }
+
+    .loading-status {
+      margin-top: 12px;
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      color: #333;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @keyframes glitch {
+
+      0%,
+      90%,
+      100% {
+        transform: translate(0);
+      }
+
+      92% {
+        transform: translate(-2px, 1px);
+      }
+
+      94% {
+        transform: translate(2px, -1px);
+      }
+
+      96% {
+        transform: translate(-1px, -1px);
+      }
+
+      98% {
+        transform: translate(1px, 1px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Native loading screen -->
+  <div id="loading-screen">
+    <div class="loading-logo">BORED GAMES</div>
+    <div class="loading-bar-container">
+      <div class="loading-bar-fill" id="loading-bar"></div>
+    </div>
+    <div class="loading-status" id="loading-status">INITIALISING SYSTEM...</div>
+  </div>
+
+  <script>
+    const loadingBar = document.getElementById('loading-bar');
+    const loadingStatus = document.getElementById('loading-status');
+    const loadingScreen = document.getElementById('loading-screen');
+
+    function setProgress(pct, status) {
+      if (loadingBar) loadingBar.style.width = pct + '%';
+      if (loadingStatus && status) loadingStatus.textContent = status;
+    }
+
+    // Slowly tick progress with logarithmic slowdown — caps at 95%
+    let currentProgress = 5;
+    setProgress(5, 'LOADING CORE...');
+
+    const statusMessages = [
+      [15, 'COMPILING MODULES...'],
+      [35, 'LOADING GAME ENGINE...'],
+      [55, 'INITIALISING SUBSYSTEMS...'],
+      [75, 'PREPARING INTERFACE...'],
+      [88, 'ALMOST READY...'],
+    ];
+
+    window._loadingTickInterval = setInterval(() => {
+      if (currentProgress < 95) {
+        const remaining = 95 - currentProgress;
+        const increment = Math.max(0.05, remaining * 0.015 + Math.random() * 0.2);
+        currentProgress = Math.min(currentProgress + increment, 95);
+
+        let statusText = 'LOADING CORE...';
+        for (const [threshold, msg] of statusMessages) {
+          if (currentProgress >= threshold) statusText = msg;
+        }
+        setProgress(currentProgress, statusText);
+      }
+    }, 150);
+
+    // Auto-detect when Flutter renders and dismiss the loading screen
+    var dismissed = false;
+    function dismissLoading() {
+      if (dismissed) return;
+      dismissed = true;
+      clearInterval(window._loadingTickInterval);
+      clearInterval(flutterPollInterval);
+      setProgress(100, 'SYSTEM ONLINE');
+      setTimeout(function () {
+        if (loadingScreen) loadingScreen.classList.add('hide');
+        setTimeout(function () { if (loadingScreen) loadingScreen.remove(); }, 600);
+      }, 200);
+    }
+
+    // Poll every 500ms for Flutter's actual DOM presence
+    var flutterPollInterval = setInterval(function () {
+      var hasFlutter = document.querySelector('flutter-view')
+        || document.querySelector('flt-glass-pane')
+        || document.querySelector('canvas');
+      if (hasFlutter) {
+        // Flutter has rendered — wait a beat for the first frame, then dismiss
+        setTimeout(dismissLoading, 300);
+      }
+    }, 500);
+
+    // Safety fallback: If Flutter is ready but hasn't started, kick it.
+    // This fixes the "stuck on loading" issue where bootstrap loads but doesn't run main.
+    var bootstrapCheckInterval = setInterval(function () {
+      if (window.$dartReadyToRunMain && window.$dartRunMain) {
+        console.log('Force starting Flutter engine...');
+        window.$dartRunMain();
+        clearInterval(bootstrapCheckInterval);
+      }
+    }, 1000);
+
+    // Ultimate safety fallback at 10 seconds to force clear if something is really wrong
+    setTimeout(function () {
+      if (!dismissed) {
+        console.warn('Loading screen timed out. Forcing dismissal.');
+        dismissLoading();
+      }
+    }, 10000);
+
+    // Also expose for manual call from Dart
+    window.dismissLoadingScreen = dismissLoading;
+  </script>
+
+  <!-- Standard Flutter bootstrap -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Sonic - Integration Tests</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #1565C0;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #FFD700;
+            margin: 20px 0 10px;
+        }
+
+        .instructions {
+            background: #2a2a4a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .instructions p {
+            margin: 5px 0;
+        }
+
+        button {
+            background: #1565C0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px 10px 0;
+        }
+
+        button:hover {
+            background: #1976D2;
+        }
+
+        .results-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .result-box {
+            background: #0f0f1a;
+            border: 2px solid #1565C0;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        #integration-results h2 {
+            color: #2ecc71;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        a {
+            color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🦔 Super Sonic Integration Tests</h1>
+
+    <div class="instructions">
+        <p><strong>Instructions:</strong></p>
+        <p>1. Open browser console (F12) to see detailed test output</p>
+        <p>2. Integration tests run automatically on page load</p>
+        <p>3. These tests verify all game systems work together</p>
+    </div>
+
+    <div>
+        <button onclick="runIntegrationTests()">🔄 Re-run Integration Tests</button>
+        <button onclick="window.location.href='test.html'">📦 Run Unit Tests</button>
+        <button onclick="window.location.href='index.html'">🎮 Play Game</button>
+    </div>
+
+    <div class="results-container">
+        <div class="result-box" id="integration-results">
+            <p>Running integration tests...</p>
+        </div>
+    </div>
+
+    <script type="module" src="integration-tests.js"></script>
+</body>
+
+</html>

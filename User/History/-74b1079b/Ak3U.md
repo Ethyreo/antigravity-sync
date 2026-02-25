@@ -1,0 +1,21 @@
+# CreatorMatch App (Flutter + Supabase)
+
+- [x] Project Setup
+    - [x] Initialize Flutter Project Structure (`creator_match`)
+    - [x] Add Dependencies (`pubspec.yaml`)
+    - [x] Set up folder structure (`models`, `screens`, `services`)
+    - [x] Install Flutter SDK (via Homebrew)
+- [ ] Supabase Integration
+    - [ ] Define Database Schema (Users, Portfolios, Requests, Shortlists)
+    - [ ] Initialize Supabase Client
+    - [ ] Implement Auth Service (Email/Password + Role)
+- [x] UI Development
+    - [x] Theme Setup (Dark Mode, AdTech Aesthetic)
+    - [x] Login/Role Selection Screen
+    - [ ] Creator Onboarding/Profile Screen
+    - [x] Brand Discovery Feed (Swipe Functionality)
+    - [x] Creator Detail View (BottomSheet/Scroll-up)
+- [x] Core Logic
+    - [x] Swipe Actions (Left/Right/Star)
+    - [x] Weighted Recommendation Algorithm (Mocked)
+    - [ ] Dashboard for "Shortlisted" and "Pending"

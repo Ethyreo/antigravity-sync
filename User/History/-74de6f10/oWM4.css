@@ -1,0 +1,510 @@
+/* ===== CSS Variables ===== */
+:root {
+    /* Background */
+    --bg-dark: #141210;
+    --bg-dark-lighter: #1a1816;
+    
+    /* Card */
+    --card-bg: #FAF5EE;
+    --card-shadow: rgba(0, 0, 0, 0.25);
+    
+    /* Accent - Warm Bronze */
+    --accent: #C2996B;
+    --accent-light: rgba(194, 153, 107, 0.15);
+    --accent-glow: rgba(194, 153, 107, 0.3);
+    
+    /* Text */
+    --text-primary: #332E29;
+    --text-secondary: #736B61;
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --text-light: rgba(255, 255, 255, 0.7);
+    
+    /* Misc */
+    --border-subtle: rgba(255, 255, 255, 0.12);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg-dark);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== App Container ===== */
+.app-container {
+    max-width: 430px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px 24px;
+    position: relative;
+}
+
+/* ===== Header ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.greeting {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+}
+
+.title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.02em;
+}
+
+.filter-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s var(--transition-smooth);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+/* ===== Card Stack ===== */
+.card-stack {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+/* ===== Individual Card ===== */
+.card {
+    position: absolute;
+    width: 100%;
+    max-width: 380px;
+    height: 520px;
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px var(--card-shadow);
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+    transition: transform 0.4s var(--transition-smooth), 
+                opacity 0.4s var(--transition-smooth);
+    will-change: transform, opacity;
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+.card.dragging {
+    transition: none;
+}
+
+.card.exiting-left {
+    transform: translateX(-150%) rotate(-30deg) !important;
+    opacity: 0 !important;
+    transition: all 0.4s var(--transition-smooth);
+}
+
+.card.exiting-right {
+    transform: translateX(150%) rotate(30deg) !important;
+    opacity: 0 !important;
+    transition: all 0.4s var(--transition-smooth);
+}
+
+/* Stacked card styles */
+.card[data-index="1"] {
+    transform: translateY(15px) scale(0.95);
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.card[data-index="2"] {
+    transform: translateY(30px) scale(0.90);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.card[data-index="0"] {
+    z-index: 3;
+}
+
+/* ===== Card Header ===== */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.category-pill {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.type-icon {
+    color: var(--accent);
+    opacity: 0.7;
+}
+
+/* ===== Card Content ===== */
+.card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.card-summary {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* ===== Key Points ===== */
+.key-points {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.key-point::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 7px;
+}
+
+/* ===== Card Footer ===== */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.source {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.time-ago {
+    font-size: 13px;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* ===== Action Buttons ===== */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.action-btn {
+    border-radius: 50%;
+    border: 2px solid var(--border-subtle);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s var(--transition-smooth);
+}
+
+.action-btn.skip,
+.action-btn.open {
+    width: 56px;
+    height: 56px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.action-btn.skip:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    transform: scale(1.08);
+}
+
+.action-btn.open:hover {
+    border-color: #4ecdc4;
+    color: #4ecdc4;
+    transform: scale(1.08);
+}
+
+.action-btn.save {
+    width: 68px;
+    height: 68px;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.action-btn.save:hover {
+    background: var(--accent-light);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: scale(1.1);
+}
+
+/* ===== Progress Indicator ===== */
+.progress-indicator {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+/* ===== Filter Modal ===== */
+.filter-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--transition-smooth);
+}
+
+.filter-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.filter-content {
+    width: 100%;
+    max-width: 430px;
+    background: var(--bg-dark-lighter);
+    border-radius: 24px 24px 0 0;
+    padding: 24px 24px 40px;
+    transform: translateY(100%);
+    transition: transform 0.4s var(--transition-smooth);
+}
+
+.filter-modal.active .filter-content {
+    transform: translateY(0);
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.filter-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+.close-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s var(--transition-smooth);
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Filter Chips ===== */
+.filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.filter-chip {
+    padding: 10px 18px;
+    border-radius: 24px;
+    border: 1.5px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s var(--transition-smooth);
+}
+
+.filter-chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* ===== Apply Button ===== */
+.apply-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    border: none;
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s var(--transition-smooth);
+}
+
+.apply-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* ===== Swipe Indicators ===== */
+.swipe-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.swipe-indicator.skip {
+    left: 20px;
+    background: rgba(255, 107, 107, 0.9);
+    color: white;
+}
+
+.swipe-indicator.save {
+    right: 20px;
+    background: rgba(194, 153, 107, 0.95);
+    color: var(--bg-dark);
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 40px;
+}
+
+.empty-state svg {
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-height: 700px) {
+    .card {
+        height: 460px;
+        padding: 22px;
+    }
+    
+    .card-title {
+        font-size: 20px;
+    }
+    
+    .card-summary {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+}

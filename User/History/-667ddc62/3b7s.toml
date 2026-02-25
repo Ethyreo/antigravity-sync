@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[dev]
+  command = "npm run dev:vite" # We will rename the vite script to run locally via Netlify
+  port = 8888
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Single-Page Application routing rule - ensures React Router handles all sub-paths
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

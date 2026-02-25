@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Super Sonic in the Multiverse of Madness - A 16-bit retro platformer adventure">
+    <title>Super Sonic in the Multiverse of Madness</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Loading Screen -->
+        <div id="loading-screen">
+            <div class="loading-content">
+                <h1 class="loading-title">SUPER SONIC</h1>
+                <h2 class="loading-subtitle">in the Multiverse of Madness</h2>
+                <div class="loading-bar-container">
+                    <div class="loading-bar" id="loading-bar"></div>
+                </div>
+                <p class="loading-text" id="loading-text">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Main Game Canvas -->
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Touch Controls (Mobile) -->
+        <div id="touch-controls" class="hidden">
+            <div class="touch-dpad">
+                <button class="touch-btn" id="touch-left" data-key="left">◀</button>
+                <button class="touch-btn" id="touch-right" data-key="right">▶</button>
+            </div>
+            <div class="touch-actions">
+                <button class="touch-btn touch-jump" id="touch-jump" data-key="jump">A</button>
+                <button class="touch-btn touch-spin" id="touch-spin" data-key="spin">B</button>
+            </div>
+        </div>
+
+        <!-- HUD Overlay -->
+        <div id="hud" class="hidden">
+            <div class="hud-left">
+                <div class="hud-item">
+                    <span class="hud-label">SCORE</span>
+                    <span class="hud-value" id="hud-score">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">TIME</span>
+                    <span class="hud-value" id="hud-time">0:00</span>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div class="hud-item">
+                    <span class="hud-label">RINGS</span>
+                    <span class="hud-value" id="hud-rings">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">LIVES</span>
+                    <span class="hud-value" id="hud-lives">3</span>
+                </div>
+            </div>
+            <div class="hud-center">
+                <div class="emerald-display" id="emerald-display"></div>
+            </div>
+        </div>
+
+        <!-- Pause Menu -->
+        <div id="pause-menu" class="menu hidden">
+            <h2>PAUSED</h2>
+            <button class="menu-btn" id="resume-btn">RESUME</button>
+            <button class="menu-btn" id="restart-btn">RESTART</button>
+            <button class="menu-btn" id="quit-btn">QUIT TO MENU</button>
+        </div>
+    </div>
+
+    <!-- Game Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

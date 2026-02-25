@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Sonic - Test Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #1565C0;
+            margin-bottom: 20px;
+        }
+
+        #test-results {
+            background: #0f0f1a;
+            border: 2px solid #1565C0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        #test-results h2 {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        #test-results p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        #test-results ul {
+            margin-left: 20px;
+        }
+
+        #test-results li {
+            margin: 5px 0;
+        }
+
+        .instructions {
+            background: #2a2a4a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .instructions p {
+            margin: 5px 0;
+        }
+
+        button {
+            background: #1565C0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #1976D2;
+        }
+
+        .console-output {
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-size: 12px;
+        }
+
+        .pass {
+            color: #2ecc71;
+        }
+
+        .fail {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🦔 Super Sonic Test Suite</h1>
+
+    <div class="instructions">
+        <p><strong>Instructions:</strong></p>
+        <p>1. Open browser console (F12 or Cmd+Option+I) to see detailed test output</p>
+        <p>2. Tests run automatically on page load</p>
+        <p>3. Click "Re-run Tests" to run again</p>
+    </div>
+
+    <button onclick="runAllTests()">🔄 Re-run Tests</button>
+
+    <div id="test-results">
+        <p>Running tests...</p>
+    </div>
+
+    <script type="module" src="tests.js"></script>
+</body>
+
+</html>

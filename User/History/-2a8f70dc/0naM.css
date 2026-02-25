@@ -1,0 +1,437 @@
+/* ============================================
+   Super Sonic in the Multiverse of Madness
+   Retro 16-bit Style CSS
+   ============================================ */
+
+:root {
+    --sonic-blue: #1565C0;
+    --sonic-gold: #FFD700;
+    --ring-gold: #FFAA00;
+    --super-gold: #FFE135;
+    --bg-dark: #0a0a12;
+    --bg-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    --text-white: #ffffff;
+    --text-shadow: #000000;
+    --hud-bg: rgba(0, 0, 0, 0.6);
+    --menu-bg: rgba(10, 10, 20, 0.95);
+    --accent-red: #e74c3c;
+    --accent-green: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', monospace;
+    overflow: hidden;
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* ============================================
+   Game Container
+   ============================================ */
+
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 320 / 224;
+    background: #000;
+    border: 4px solid var(--sonic-blue);
+    border-radius: 8px;
+    box-shadow: 
+        0 0 20px rgba(21, 101, 192, 0.5),
+        0 0 60px rgba(21, 101, 192, 0.3),
+        inset 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* ============================================
+   Game Canvas - Pixel Perfect Rendering
+   ============================================ */
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* ============================================
+   Loading Screen
+   ============================================ */
+
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-content {
+    text-align: center;
+    color: var(--text-white);
+}
+
+.loading-title {
+    font-size: clamp(1rem, 4vw, 2rem);
+    color: var(--sonic-blue);
+    text-shadow: 
+        3px 3px 0 var(--text-shadow),
+        -1px -1px 0 var(--sonic-gold);
+    margin-bottom: 10px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-subtitle {
+    font-size: clamp(0.5rem, 2vw, 0.8rem);
+    color: var(--sonic-gold);
+    text-shadow: 2px 2px 0 var(--text-shadow);
+    margin-bottom: 30px;
+}
+
+.loading-bar-container {
+    width: 80%;
+    max-width: 300px;
+    height: 20px;
+    background: #1a1a2e;
+    border: 3px solid var(--sonic-blue);
+    border-radius: 4px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--sonic-blue), var(--sonic-gold));
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--sonic-gold);
+}
+
+.loading-text {
+    font-size: 0.6rem;
+    color: #888;
+    animation: blink 1s infinite;
+}
+
+/* ============================================
+   HUD (Heads-Up Display)
+   ============================================ */
+
+#hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+    z-index: 50;
+}
+
+#hud.hidden {
+    display: none;
+}
+
+.hud-left, .hud-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hud-center {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hud-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: var(--hud-bg);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.hud-label {
+    font-size: clamp(0.4rem, 1.5vw, 0.6rem);
+    color: var(--sonic-gold);
+}
+
+.hud-value {
+    font-size: clamp(0.5rem, 2vw, 0.8rem);
+    color: var(--text-white);
+    min-width: 60px;
+    text-align: right;
+}
+
+#hud-rings {
+    color: var(--ring-gold);
+}
+
+.emerald-display {
+    display: flex;
+    gap: 4px;
+}
+
+.emerald {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.emerald.collected {
+    opacity: 1;
+    box-shadow: 0 0 8px currentColor;
+}
+
+.emerald-1 { background: #e74c3c; }
+.emerald-2 { background: #f39c12; }
+.emerald-3 { background: #f1c40f; }
+.emerald-4 { background: #2ecc71; }
+.emerald-5 { background: #3498db; }
+.emerald-6 { background: #9b59b6; }
+.emerald-7 { background: #ecf0f1; }
+
+/* ============================================
+   Touch Controls (Mobile)
+   ============================================ */
+
+#touch-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+    z-index: 60;
+}
+
+#touch-controls.hidden {
+    display: none;
+}
+
+.touch-dpad {
+    display: flex;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+.touch-actions {
+    display: flex;
+    gap: 15px;
+    pointer-events: auto;
+}
+
+.touch-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-white);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.touch-btn:active {
+    background: rgba(21, 101, 192, 0.7);
+    transform: scale(0.95);
+    border-color: var(--sonic-blue);
+}
+
+.touch-jump {
+    background: rgba(21, 101, 192, 0.4);
+    width: 70px;
+    height: 70px;
+}
+
+.touch-spin {
+    background: rgba(231, 76, 60, 0.4);
+}
+
+/* ============================================
+   Menus
+   ============================================ */
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--menu-bg);
+    border: 4px solid var(--sonic-blue);
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    z-index: 80;
+    box-shadow: 0 0 40px rgba(21, 101, 192, 0.5);
+}
+
+.menu.hidden {
+    display: none;
+}
+
+.menu h2 {
+    color: var(--sonic-gold);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 0 var(--text-shadow);
+}
+
+.menu-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    background: linear-gradient(180deg, #2a2a4a 0%, #1a1a2e 100%);
+    border: 3px solid var(--sonic-blue);
+    border-radius: 6px;
+    color: var(--text-white);
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+    background: linear-gradient(180deg, var(--sonic-blue) 0%, #1a1a4e 100%);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(21, 101, 192, 0.7);
+}
+
+.menu-btn:active {
+    transform: scale(0.98);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shine {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+    100% { filter: brightness(1); }
+}
+
+@keyframes ring-spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+    #game-container {
+        max-width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .touch-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    .touch-jump {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hud-item {
+        padding: 3px 6px;
+    }
+    
+    .touch-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

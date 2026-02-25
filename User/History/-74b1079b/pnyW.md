@@ -1,0 +1,22 @@
+# Brand & Creator Discovery App
+
+- [ ] Project Setup & Configuration
+    - [/] Initialize Next.js project with Tailwind CSS & TypeScript
+    - [/] Configure Shadcn UI & Framer Motion for gestures/animations
+    - [ ] Set up Supabase client (if approved) or Mock Data store
+- [ ] Authentication & Onboarding
+    - [ ] Brand Onboarding Flow (Name, Industry, Description)
+    - [ ] Creator Onboarding Flow (Bio, Tags, Rate Card, Media Uploads)
+- [ ] Discovery Feed (Brand View)
+    - [ ] Tinder-style Card Stack Component
+    - [ ] Card UI: Image, Name, Tags
+    - [ ] Gestures: Swipe Left/Right, Scroll Up (Details)
+    - [ ] Interaction Buttons: Star (Priority), Thumbs Down (Negative)
+- [ ] Recommendation Logic
+    - [ ] Weighted Tag Algorithm (Star = +40% frequency)
+    - [ ] Negative Feedback Logic (Exclude Tags)
+- [ ] Creator Dashboard
+    - [ ] Pending Requests List
+    - [ ] Accept/Decline Actions
+- [ ] Notifications & Real-time Updates
+    - [ ] Push/In-app Notifications for "Shortlist" events

@@ -1,0 +1,15 @@
+# Bored Games - Project Tasks
+
+- [ ] Initialize Flutter Project "Bored Games" <!-- id: 0 -->
+- [ ] Design and Document Architecture/Folder Structure <!-- id: 1 -->
+    - [ ] Analyze modular game approach <!-- id: 2 -->
+    - [ ] Plan AdTech integration placeholders <!-- id: 3 -->
+    - [ ] Plan Local Storage strategy <!-- id: 4 -->
+- [ ] Set up Project Structure <!-- id: 5 -->
+    - [ ] Create core directories (ui, logic, services) <!-- id: 6 -->
+    - [ ] Create game interface/base classes <!-- id: 7 -->
+- [ ] Implement Home Screen <!-- id: 8 -->
+    - [ ] Create aesthetically pleasing entry animation <!-- id: 9 -->
+    - [ ] Build game selector UI <!-- id: 10 -->
+- [ ] Implement First Mini-Game (Placeholder/Simple) <!-- id: 11 -->
+- [ ] Implement Local Storage Service <!-- id: 12 -->

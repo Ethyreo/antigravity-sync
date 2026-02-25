@@ -1,0 +1,18 @@
+- [x] Phase 1: The Injection (Setup)
+    - [x] Load `https://thevintagesnob.in/`
+    - [x] Inject Spy Tool JavaScript
+    - [x] Verify Checkpoint 1 (Script Active & Breeze Loaded)
+- [x] Phase 2: The User Simulation (Mobile)
+    - [x] Set Viewport to 390x844
+    - [x] Navigate to "New Arrivals"
+    - [x] Enter Product Page (PDP)
+    - [x] Verify Checkpoint 2 (PDP Reached, UI Obstruction Check)
+- [ ] Phase 3: The Checkout Interrogation
+    - [ ] Locate "Checkout with Breeze"
+    - [ ] Measure Modal Load Time
+    - [ ] Verify Price & Discount
+    - [ ] Verify Checkpoint 3 (Modal Loaded, Price Match)
+- [ ] Phase 4: The AdTech Audit
+    - [ ] Analyze Console Logs for Pixel fires
+    - [ ] Verify Checkpoint 4 (Pixel on Click, Pixel on PageView)
+- [ ] Compile Findings
