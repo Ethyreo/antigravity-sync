@@ -7,6 +7,12 @@
         "folders": [
             {
                 "folderUri": "file:///Users/gurman/Coding%20Projects"
+            },
+            {
+                "folderUri": "file:///Users/gurman/.gemini/antigravity/playground/drifting-schrodinger"
+            },
+            {
+                "folderUri": "file:///Users/gurman/.gemini/antigravity/playground/luminescent-singularity"
             }
         ],
         "emptyWindows": []
@@ -18,7 +24,9 @@
             "file:///Users/gurman/.gemini/antigravity/playground/axial-chromosphere": "__default__profile__",
             "file:///Users/gurman/.gemini/antigravity/playground/blazing-quasar": "__default__profile__",
             "file:///Users/gurman/.gemini/antigravity/playground/photonic-armstrong": "__default__profile__",
-            "file:///Users/gurman/.gemini/antigravity/playground/azure-photosphere": "__default__profile__"
+            "file:///Users/gurman/.gemini/antigravity/playground/azure-photosphere": "__default__profile__",
+            "file:///Users/gurman/.gemini/antigravity/playground/drifting-schrodinger": "__default__profile__",
+            "file:///Users/gurman/.gemini/antigravity/playground/luminescent-singularity": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -84,8 +92,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -634,6 +641,13 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.splitEditorInGroup",
+                                    "label": "Split in &&Group"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -734,7 +748,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "enabled": false
+                        "checked": true
                     }
                 ]
             },
@@ -1410,6 +1424,11 @@
                 "isNative": false,
                 "userSettingsLabel": "cmd+k cmd+\\"
             },
+            "workbench.action.splitEditorInGroup": {
+                "label": "⌘K ⇧⌘\\",
+                "isNative": false,
+                "userSettingsLabel": "cmd+k shift+cmd+\\"
+            },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "⌘K O",
                 "isNative": false,
@@ -1695,13 +1714,13 @@
     "antigravityUnifiedStateSync.agentPreferences.hasAutoContinueOnMaxGeneratorInvocationsMigrated": true,
     "antigravityUnifiedStateSync.modelPreferences.hasLastModelDefaultOverrideVersionIdMigrated": true,
     "agentManagerWindow.migratedFromInitState": true,
-    "jetski.agentManagerWindowClosed": false,
+    "jetski.agentManagerWindowClosed": true,
     "unifiedStateSync.hasOnboardingMigrated": true,
     "scratchWorkspaces.migratedFromInitState": true,
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
             "sideBarWidth": 300,
-            "auxiliaryBarWidth": 351,
+            "auxiliaryBarWidth": 300,
             "workspaces": {
                 "b2cd0f69a33c5d9d3eb300bc5079bc76": {
                     "sideBarVisible": true,
@@ -1716,6 +1735,14 @@
                     "auxiliaryBarVisible": true
                 },
                 "6d86362d55550b10605af46240935691": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "9cffaceb215da97cfcf704325e043272": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "f2feebfb054116abc2a5cba140eb09a0": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": true
                 }
