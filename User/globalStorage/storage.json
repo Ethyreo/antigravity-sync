@@ -9,14 +9,7 @@
                 "folderUri": "file:///Users/gurman/Coding%20Projects"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1772018922095"
-            },
-            {
-                "backupFolder": "1772032687666"
-            }
-        ]
+        "emptyWindows": []
     },
     "windowControlHeight": 35,
     "profileAssociations": {
@@ -27,9 +20,7 @@
             "file:///Users/gurman/.gemini/antigravity/playground/photonic-armstrong": "__default__profile__",
             "file:///Users/gurman/.gemini/antigravity/playground/azure-photosphere": "__default__profile__"
         },
-        "emptyWindows": {
-            "1772032687666": "__default__profile__"
-        }
+        "emptyWindows": {}
     },
     "unifiedStateSync.hasTrajectorySummariesMigrated": true,
     "antigravityUnifiedStateSync.agentPreferences.hasPlanningModeMigrated": true,
@@ -93,7 +84,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -750,8 +742,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1732,5 +1723,6 @@
         }
     },
     "antigravityUnifiedStateSync.oauthToken.hasLegacyMigrated": true,
-    "unifiedStateSync.hasUserStatusMigrated": true
+    "unifiedStateSync.hasUserStatusMigrated": true,
+    "overrideStore.migratedSecureMode": true
 }
