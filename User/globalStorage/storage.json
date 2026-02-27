@@ -167,11 +167,13 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save"
+                        "label": "&&Save",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As..."
+                        "label": "Save &&As...",
+                        "enabled": false
                     },
                     {
                         "id": "saveAll",
@@ -212,11 +214,13 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File"
+                        "label": "Re&&vert File",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor"
+                        "label": "&&Close Editor",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeFolder",
@@ -258,11 +262,13 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find"
+                        "label": "&&Find",
+                        "enabled": false
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace"
+                        "label": "&&Replace",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -641,13 +647,6 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "workbench.action.splitEditorInGroup",
-                                    "label": "Split in &&Group"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -748,7 +747,7 @@
                     {
                         "id": "editor.action.toggleWordWrap",
                         "label": "&&Word Wrap",
-                        "checked": true
+                        "enabled": false
                     }
                 ]
             },
@@ -1290,8 +1289,8 @@
                 "userSettingsLabel": "cmd+k f"
             },
             "workbench.action.closeWindow": {
-                "label": "Shift+Cmd+W",
-                "userSettingsLabel": "shift+cmd+w"
+                "label": "Cmd+W",
+                "userSettingsLabel": "cmd+w"
             },
             "undo": {
                 "label": "Cmd+Z",
@@ -1423,11 +1422,6 @@
                 "label": "⌘K ⌘\\",
                 "isNative": false,
                 "userSettingsLabel": "cmd+k cmd+\\"
-            },
-            "workbench.action.splitEditorInGroup": {
-                "label": "⌘K ⇧⌘\\",
-                "isNative": false,
-                "userSettingsLabel": "cmd+k shift+cmd+\\"
             },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "⌘K O",
