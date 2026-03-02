@@ -7,12 +7,6 @@
         "folders": [
             {
                 "folderUri": "file:///Users/gurman/Coding%20Projects"
-            },
-            {
-                "folderUri": "file:///Users/gurman/.gemini/antigravity/playground/drifting-schrodinger"
-            },
-            {
-                "folderUri": "file:///Users/gurman/.gemini/antigravity/playground/luminescent-singularity"
             }
         ],
         "emptyWindows": []
@@ -92,7 +86,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -647,6 +642,13 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.splitEditorInGroup",
+                                    "label": "Split in &&Group"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -755,7 +757,8 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back"
+                        "label": "&&Back",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1422,6 +1425,11 @@
                 "label": "⌘K ⌘\\",
                 "isNative": false,
                 "userSettingsLabel": "cmd+k cmd+\\"
+            },
+            "workbench.action.splitEditorInGroup": {
+                "label": "⌘K ⇧⌘\\",
+                "isNative": false,
+                "userSettingsLabel": "cmd+k shift+cmd+\\"
             },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "⌘K O",
