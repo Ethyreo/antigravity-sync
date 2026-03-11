@@ -7,6 +7,9 @@
         "folders": [
             {
                 "folderUri": "file:///Users/gurman/Coding%20Projects"
+            },
+            {
+                "folderUri": "file:///Users/gurman/.gemini/antigravity/playground/molten-skylab"
             }
         ],
         "emptyWindows": []
@@ -20,7 +23,8 @@
             "file:///Users/gurman/.gemini/antigravity/playground/photonic-armstrong": "__default__profile__",
             "file:///Users/gurman/.gemini/antigravity/playground/azure-photosphere": "__default__profile__",
             "file:///Users/gurman/.gemini/antigravity/playground/drifting-schrodinger": "__default__profile__",
-            "file:///Users/gurman/.gemini/antigravity/playground/luminescent-singularity": "__default__profile__"
+            "file:///Users/gurman/.gemini/antigravity/playground/luminescent-singularity": "__default__profile__",
+            "file:///Users/gurman/.gemini/antigravity/playground/molten-skylab": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -86,7 +90,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -161,11 +166,13 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save"
+                        "label": "&&Save",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As..."
+                        "label": "Save &&As...",
+                        "enabled": false
                     },
                     {
                         "id": "saveAll",
@@ -206,11 +213,13 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File"
+                        "label": "Re&&vert File",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor"
+                        "label": "&&Close Editor",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeFolder",
@@ -638,6 +647,13 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.splitEditorInGroup",
+                                    "label": "Split in &&Group"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -712,10 +728,6 @@
                     {
                         "id": "workbench.view.extensions",
                         "label": "E&&xtensions"
-                    },
-                    {
-                        "id": "workbench.view.extension.test",
-                        "label": "T&&esting"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1419,6 +1431,11 @@
                 "isNative": false,
                 "userSettingsLabel": "cmd+k cmd+\\"
             },
+            "workbench.action.splitEditorInGroup": {
+                "label": "⌘K ⇧⌘\\",
+                "isNative": false,
+                "userSettingsLabel": "cmd+k shift+cmd+\\"
+            },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "⌘K O",
                 "isNative": false,
@@ -1684,7 +1701,7 @@
             "titleBarHeight": 35,
             "activityBarWidth": 42,
             "sideBarWidth": 300,
-            "auxiliaryBarWidth": 419,
+            "auxiliaryBarWidth": 300,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -1708,18 +1725,30 @@
                 "height": 833
             }
         },
-        "openedWindows": []
+        "openedWindows": [
+            {
+                "folder": "file:///Users/gurman/Coding%20Projects",
+                "backupPath": "/Users/gurman/Library/Application Support/Antigravity/Backups/2c8d6a18f79215f2d30ccff0bbdffe67",
+                "uiState": {
+                    "mode": 1,
+                    "x": 17,
+                    "y": 33,
+                    "width": 1323,
+                    "height": 833
+                }
+            }
+        ]
     },
     "antigravityUnifiedStateSync.agentPreferences.hasAutoContinueOnMaxGeneratorInvocationsMigrated": true,
     "antigravityUnifiedStateSync.modelPreferences.hasLastModelDefaultOverrideVersionIdMigrated": true,
     "agentManagerWindow.migratedFromInitState": true,
-    "jetski.agentManagerWindowClosed": true,
+    "jetski.agentManagerWindowClosed": false,
     "unifiedStateSync.hasOnboardingMigrated": true,
     "scratchWorkspaces.migratedFromInitState": true,
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
             "sideBarWidth": 300,
-            "auxiliaryBarWidth": 419,
+            "auxiliaryBarWidth": 300,
             "workspaces": {
                 "b2cd0f69a33c5d9d3eb300bc5079bc76": {
                     "sideBarVisible": true,
@@ -1746,6 +1775,10 @@
                     "auxiliaryBarVisible": true
                 },
                 "69158dc8c6ea3783826c551741fdb997": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "ec7a29027cba0c5ea6490c455d062769": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": true
                 }
