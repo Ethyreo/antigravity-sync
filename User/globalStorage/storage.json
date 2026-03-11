@@ -7,12 +7,13 @@
         "folders": [
             {
                 "folderUri": "file:///Users/gurman/Coding%20Projects"
-            },
-            {
-                "folderUri": "file:///Users/gurman/.gemini/antigravity/playground/molten-skylab"
             }
         ],
-        "emptyWindows": []
+        "emptyWindows": [
+            {
+                "backupFolder": "1773228017116"
+            }
+        ]
     },
     "windowControlHeight": 35,
     "profileAssociations": {
@@ -26,7 +27,9 @@
             "file:///Users/gurman/.gemini/antigravity/playground/luminescent-singularity": "__default__profile__",
             "file:///Users/gurman/.gemini/antigravity/playground/molten-skylab": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1773228017116": "__default__profile__"
+        }
     },
     "unifiedStateSync.hasTrajectorySummariesMigrated": true,
     "antigravityUnifiedStateSync.agentPreferences.hasPlanningModeMigrated": true,
@@ -641,13 +644,6 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "workbench.action.splitEditorInGroup",
-                                    "label": "Split in &&Group"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
                                     "id": "workbench.action.moveEditorToNewWindow",
                                     "label": "&&Move Editor into New Window"
                                 },
@@ -751,7 +747,8 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap"
+                        "label": "&&Word Wrap",
+                        "enabled": false
                     }
                 ]
             },
@@ -759,8 +756,7 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back",
-                        "enabled": false
+                        "label": "&&Back"
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1165,6 +1161,10 @@
                         "label": "Open Walkthrough..."
                     },
                     {
+                        "id": "workbench.action.provideFeedback",
+                        "label": "Provide &&Feedback"
+                    },
+                    {
                         "id": "vscode.menubar.separator"
                     },
                     {
@@ -1427,11 +1427,6 @@
                 "label": "⌘K ⌘\\",
                 "isNative": false,
                 "userSettingsLabel": "cmd+k cmd+\\"
-            },
-            "workbench.action.splitEditorInGroup": {
-                "label": "⌘K ⇧⌘\\",
-                "isNative": false,
-                "userSettingsLabel": "cmd+k shift+cmd+\\"
             },
             "workbench.action.copyEditorToNewWindow": {
                 "label": "⌘K O",
@@ -1698,7 +1693,7 @@
             "titleBarHeight": 35,
             "activityBarWidth": 42,
             "sideBarWidth": 300,
-            "auxiliaryBarWidth": 300,
+            "auxiliaryBarWidth": 419,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -1712,29 +1707,16 @@
     "antigravityUnifiedStateSync.modelPreferences.hasLastSelectedCascadeModelMigrated": true,
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///Users/gurman/Coding%20Projects",
-            "backupPath": "/Users/gurman/Library/Application Support/Antigravity/Backups/2c8d6a18f79215f2d30ccff0bbdffe67",
+            "backupPath": "/Users/gurman/Library/Application Support/Antigravity/Backups/1773228017116",
             "uiState": {
                 "mode": 1,
                 "x": 17,
-                "y": 33,
+                "y": 32,
                 "width": 1323,
                 "height": 833
             }
         },
-        "openedWindows": [
-            {
-                "folder": "file:///Users/gurman/Coding%20Projects",
-                "backupPath": "/Users/gurman/Library/Application Support/Antigravity/Backups/2c8d6a18f79215f2d30ccff0bbdffe67",
-                "uiState": {
-                    "mode": 1,
-                    "x": 17,
-                    "y": 33,
-                    "width": 1323,
-                    "height": 833
-                }
-            }
-        ]
+        "openedWindows": []
     },
     "antigravityUnifiedStateSync.agentPreferences.hasAutoContinueOnMaxGeneratorInvocationsMigrated": true,
     "antigravityUnifiedStateSync.modelPreferences.hasLastModelDefaultOverrideVersionIdMigrated": true,
@@ -1745,7 +1727,7 @@
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
             "sideBarWidth": 300,
-            "auxiliaryBarWidth": 300,
+            "auxiliaryBarWidth": 419,
             "workspaces": {
                 "b2cd0f69a33c5d9d3eb300bc5079bc76": {
                     "sideBarVisible": true,
