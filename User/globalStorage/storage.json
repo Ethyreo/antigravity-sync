@@ -93,8 +93,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -1686,16 +1685,6 @@
             "statusBarBackground": "#181818",
             "statusBarBorder": "#2b2b2b",
             "statusBarNoFolderBackground": "#1f1f1f"
-        },
-        "layoutInfo": {
-            "sideBarSide": "left",
-            "editorPartMinWidth": 220,
-            "titleBarHeight": 35,
-            "activityBarWidth": 42,
-            "sideBarWidth": 300,
-            "auxiliaryBarWidth": 419,
-            "statusBarHeight": 22,
-            "windowBorder": false
         }
     },
     "antigravityUnifiedStateSync.tabPreferences.hasMigrated": true,
@@ -1707,13 +1696,15 @@
     "antigravityUnifiedStateSync.modelPreferences.hasLastSelectedCascadeModelMigrated": true,
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/Users/gurman/Library/Application Support/Antigravity/Backups/1773228017116",
+            "folder": "file:///Users/gurman/Coding%20Projects",
+            "backupPath": "/Users/gurman/Library/Application Support/Antigravity/Backups/2c8d6a18f79215f2d30ccff0bbdffe67",
             "uiState": {
-                "mode": 1,
-                "x": 17,
-                "y": 32,
+                "mode": 3,
+                "display": 69733952,
                 "width": 1323,
-                "height": 833
+                "height": 833,
+                "x": 17,
+                "y": 32
             }
         },
         "openedWindows": []
@@ -1750,10 +1741,6 @@
                     "auxiliaryBarVisible": true
                 },
                 "f2feebfb054116abc2a5cba140eb09a0": {
-                    "sideBarVisible": true,
-                    "auxiliaryBarVisible": true
-                },
-                "69158dc8c6ea3783826c551741fdb997": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": true
                 },
