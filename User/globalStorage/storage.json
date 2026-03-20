@@ -9,11 +9,7 @@
                 "folderUri": "file:///Users/gurman/Coding%20Projects"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1773228017116"
-            }
-        ]
+        "emptyWindows": []
     },
     "windowControlHeight": 35,
     "profileAssociations": {
@@ -93,7 +89,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -187,13 +184,6 @@
                         "label": "Share",
                         "submenu": {
                             "items": [
-                                {
-                                    "id": "github.copyVscodeDevLinkFile",
-                                    "label": "Copy vscode.dev Link"
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
                                 {
                                     "id": "workbench.profiles.actions.exportProfile",
                                     "label": "Export Profile (Default)..."
@@ -359,10 +349,6 @@
                     },
                     {
                         "id": "vscode.menubar.separator"
-                    },
-                    {
-                        "id": "workbench.action.toggleMultiCursorModifier",
-                        "label": "Switch to Cmd+Click for Multi-Cursor"
                     },
                     {
                         "id": "editor.action.toggleColumnSelection",
@@ -719,10 +705,6 @@
                         "label": "E&&xtensions"
                     },
                     {
-                        "id": "workbench.view.extension.test",
-                        "label": "T&&esting"
-                    },
-                    {
                         "id": "vscode.menubar.separator"
                     },
                     {
@@ -755,7 +737,8 @@
                 "items": [
                     {
                         "id": "workbench.action.navigateBack",
-                        "label": "&&Back"
+                        "label": "&&Back",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.navigateForward",
@@ -1085,11 +1068,13 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal"
+                        "label": "&&Split Terminal",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.terminal.newInNewWindow",
-                        "label": "New Terminal &&Window"
+                        "label": "New Terminal &&Window",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1185,10 +1170,6 @@
             },
             "Preferences": {
                 "items": [
-                    {
-                        "id": "workbench.action.openAntigravitySettings",
-                        "label": "Antigravity Settings"
-                    },
                     {
                         "id": "workbench.action.openSettings",
                         "label": "&&Editor Settings"
@@ -1651,10 +1632,6 @@
                 "label": "Shift+Cmd+B",
                 "userSettingsLabel": "shift+cmd+b"
             },
-            "workbench.action.openAntigravitySettings": {
-                "label": "Cmd+,",
-                "userSettingsLabel": "cmd+,"
-            },
             "workbench.action.openGlobalKeybindings": {
                 "label": "⌘K ⌘S",
                 "isNative": false,
@@ -1685,6 +1662,16 @@
             "statusBarBackground": "#181818",
             "statusBarBorder": "#2b2b2b",
             "statusBarNoFolderBackground": "#1f1f1f"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 42,
+            "sideBarWidth": 300,
+            "auxiliaryBarWidth": 419,
+            "statusBarHeight": 22,
+            "windowBorder": false
         }
     },
     "antigravityUnifiedStateSync.tabPreferences.hasMigrated": true,
@@ -1699,7 +1686,7 @@
             "folder": "file:///Users/gurman/Coding%20Projects",
             "backupPath": "/Users/gurman/Library/Application Support/Antigravity/Backups/2c8d6a18f79215f2d30ccff0bbdffe67",
             "uiState": {
-                "mode": 3,
+                "mode": 1,
                 "display": 69733952,
                 "width": 1323,
                 "height": 833,
@@ -1745,6 +1732,10 @@
                     "auxiliaryBarVisible": true
                 },
                 "ec7a29027cba0c5ea6490c455d062769": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "69158dc8c6ea3783826c551741fdb997": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": true
                 }
