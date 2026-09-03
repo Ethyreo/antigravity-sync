@@ -1,0 +1,148 @@
+model = "gpt-5.4"
+model_reasoning_effort = "medium"
+personality = "pragmatic"
+[projects.'D:\Coding Projects\Projects']
+trust_level = "trusted"
+
+[windows]
+sandbox = "elevated"
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+
+[mcp_servers.sequential-thinking]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+
+[mcp_servers.sequential-thinking.tools.sequentialthinking]
+approval_mode = "approve"
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@latest"]
+
+[mcp_servers.shadcn]
+command = "npx"
+args = ["-y", "shadcn@latest", "mcp"]
+
+[mcp_servers.memory-bank]
+command = "npx"
+args = ["-y", "@aakarsh-sasi/memory-bank-mcp", "--mode", "code", "--path", 'D:\Coding Projects\Projects']
+
+[mcp_servers.exa]
+url = "https://mcp.exa.ai/mcp?tools=web_search_exa,get_code_context_exa"
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\Ethyreo\AppData\Local\OpenAI\Codex\bin\3c238e29bbc930ff\node_repl.exe'
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_MARKETPLACE_NAME = "openai-bundled"
+CODEX_CLI_PATH = 'C:\Users\Ethyreo\AppData\Local\OpenAI\Codex\bin\3b5d676fd5f36bba\codex.exe'
+CODEX_HOME = 'C:\Users\Ethyreo\.codex'
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = 'C:\Users\Ethyreo\AppData\Local\OpenAI\Codex\bin\5b9024f90663758b\node.exe'
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "d1d294436cc85da21c2021bc377e9e965e3492d3104f7e9cf1b369d5379d3056"
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\Ethyreo\.codex'
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "BROWSER_USE_MARKETPLACE_NAME"
+
+# GSD Agent Configuration — managed by get-shit-done installer
+
+[agents.gsd-codebase-mapper]
+description = "Explores codebase and writes structured analysis documents. Spawned by map-codebase with a focus area (tech, arch, quality, concerns). Writes documents directly to reduce orchestrator context load."
+config_file = "agents/gsd-codebase-mapper.toml"
+
+[agents.gsd-debugger]
+description = "Investigates bugs using scientific method, manages debug sessions, handles checkpoints. Spawned by /gsd:debug orchestrator."
+config_file = "agents/gsd-debugger.toml"
+
+[agents.gsd-executor]
+description = "Executes GSD plans with atomic commits, deviation handling, checkpoint protocols, and state management. Spawned by execute-phase orchestrator or execute-plan command."
+config_file = "agents/gsd-executor.toml"
+
+[agents.gsd-integration-checker]
+description = "Verifies cross-phase integration and E2E flows. Checks that phases connect properly and user workflows complete end-to-end."
+config_file = "agents/gsd-integration-checker.toml"
+
+[agents.gsd-nyquist-auditor]
+description = "Fills Nyquist validation gaps by generating tests and verifying coverage for phase requirements"
+config_file = "agents/gsd-nyquist-auditor.toml"
+
+[agents.gsd-phase-researcher]
+description = "Researches how to implement a phase before planning. Produces RESEARCH.md consumed by gsd-planner. Spawned by /gsd:plan-phase orchestrator."
+config_file = "agents/gsd-phase-researcher.toml"
+
+[agents.gsd-plan-checker]
+description = "Verifies plans will achieve phase goal before execution. Goal-backward analysis of plan quality. Spawned by /gsd:plan-phase orchestrator."
+config_file = "agents/gsd-plan-checker.toml"
+
+[agents.gsd-planner]
+description = "Creates executable phase plans with task breakdown, dependency analysis, and goal-backward verification. Spawned by /gsd:plan-phase orchestrator."
+config_file = "agents/gsd-planner.toml"
+
+[agents.gsd-project-researcher]
+description = "Researches domain ecosystem before roadmap creation. Produces files in .planning/research/ consumed during roadmap creation. Spawned by /gsd:new-project or /gsd:new-milestone orchestrators."
+config_file = "agents/gsd-project-researcher.toml"
+
+[agents.gsd-research-synthesizer]
+description = "Synthesizes research outputs from parallel researcher agents into SUMMARY.md. Spawned by /gsd:new-project after 4 researcher agents complete."
+config_file = "agents/gsd-research-synthesizer.toml"
+
+[agents.gsd-roadmapper]
+description = "Creates project roadmaps with phase breakdown, requirement mapping, success criteria derivation, and coverage validation. Spawned by /gsd:new-project orchestrator."
+config_file = "agents/gsd-roadmapper.toml"
+
+[agents.gsd-ui-auditor]
+description = "Retroactive 6-pillar visual audit of implemented frontend code. Produces scored UI-REVIEW.md. Spawned by /gsd:ui-review orchestrator."
+config_file = "agents/gsd-ui-auditor.toml"
+
+[agents.gsd-ui-checker]
+description = "Validates UI-SPEC.md design contracts against 6 quality dimensions. Produces BLOCK/FLAG/PASS verdicts. Spawned by /gsd:ui-phase orchestrator."
+config_file = "agents/gsd-ui-checker.toml"
+
+[agents.gsd-ui-researcher]
+description = "Produces UI-SPEC.md design contract for frontend phases. Reads upstream artifacts, detects design system state, asks only unanswered questions. Spawned by /gsd:ui-phase orchestrator."
+config_file = "agents/gsd-ui-researcher.toml"
+
+[agents.gsd-verifier]
+description = "Verifies phase goal achievement through goal-backward analysis. Checks codebase delivers what phase promised, not just that tasks completed. Creates VERIFICATION.md report."
+config_file = "agents/gsd-verifier.toml"
+
+[features]
+multi_agent = true
+js_repl = false
+
+[marketplaces.openai-bundled]
+last_updated = "2026-05-21T10:00:52Z"
+source_type = "local"
+source = '\\?\C:\Users\Ethyreo\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-21T07:55:36Z"
+source_type = "local"
+source = '\\?\C:\Users\Ethyreo\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[desktop]
+appearanceTheme = "dark"
+conversationDetailMode = "STEPS_PROSE"
+
+[desktop.open-in-target-preferences]
+global = "fileManager"

@@ -5,6 +5,9 @@ cd "/Users/gurman/Coding Projects/antigravity-sync" || exit 1
 
 # 1. Sync current Mac config to the repo
 ./sync.sh
+if [ -f "./sync_codex.sh" ]; then
+    ./sync_codex.sh
+fi
 
 # 2. Add and commit changes from Mac
 git add .
